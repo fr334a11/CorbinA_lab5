@@ -1,4 +1,4 @@
-package testing;
+ 
 
 import java.util.Random;
 /**
@@ -12,8 +12,6 @@ import java.util.Random;
  */
 public class Sprite extends Oval {
     private int speed = 4;
-    private int world_x = 700;
-    private int world_y = 500;
     private int accX = speed;
     private int accY = speed;
     public Sprite (int x, int y) {
@@ -24,8 +22,8 @@ public class Sprite extends Oval {
         return rand.nextInt(20)+5;
     }
     void act() {
-        if ( getX()+getWidth() >=world_x )  { accX = -random(); } else if (getX()<=0 ) { accX = random(); }
-        if ( getY()+getHeight()>=world_y )  { accY = -random(); } else if (getY()<=0 ) { accY = random(); }
+        if ( getX()+getWidth() >=SpriteWorld.world_x )  { accX = -random(); } else if (getX()<=0 ) { accX = random(); }
+        if ( getY()+getHeight()>=SpriteWorld.world_y )  { accY = -random(); } else if (getY()<=0 ) { accY = random(); }
         
         while(accX == accY && accY == 0) {//so the ball doesn't halt 100%
             accX = random();
@@ -33,13 +31,13 @@ public class Sprite extends Oval {
         }
         this.setLocation(getX()+accX,getY()+accY);//update the ball's location after initial calcuation
         //the following is to check to make sure the ball is not out of bounds
-        if ( getX()+getWidth()>=world_x )  {
-            this.setLocation(world_x-getWidth(),getY());
+        if ( getX()+getWidth()>=SpriteWorld.world_x )  {
+            this.setLocation(SpriteWorld.world_x-getWidth(),getY());
         } else if (getX()<=0 ) {
             this.setLocation(0,getY());
         }
-        if ( getY()+getHeight()>=world_y )  {
-            this.setLocation(getX(),world_y-getHeight());
+        if ( getY()+getHeight()>=SpriteWorld.world_y )  {
+            this.setLocation(getX(),SpriteWorld.world_y-getHeight());
         } else if (getY()<=0 ) {
             this.setLocation(getX(),0);
         }
