@@ -71,7 +71,7 @@ public class Calculator {
     /**
      * creats a calc and plays with it
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int toRound = 3;
         Calculator myCalc = new Calculator();
         
@@ -91,5 +91,17 @@ public class Calculator {
         b = Calculator.round(myCalc.rand(.01,100),toRound);
         myCalc.supriseAnswer(a,b);
         System.out.println( "suprise: "+Calculator.round(myCalc.getAnswer(),toRound) );
+    }//*/
+    static int roundInt(double num) {
+        num = (int)(num*10);
+        System.out.println("num: "+num);
+        System.out.println(num+"-"+(int)(num/10)+"*10.0");
+        if ( num-((int)(num/10)*10.0)>=5 ) {
+            return (int)((num/10)+1);
+        }
+        return (int)(num/10);
+    }
+    public static void main() {
+        System.out.print("5.5:"+roundInt(5.4) );
     }
 }

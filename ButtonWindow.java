@@ -50,23 +50,23 @@ public abstract class ButtonWindow  {
             this.setSize(w,h);
         }
 
-        public void addActButton(int x, int y, int w, int h){
-            actButton = new JButton("Act");
+        public void addActButton(int x, int y, int w, int h, String name) {
+            actButton = new JButton(name);
             actButton.setBounds(x, y, w, h);
             actButton.addActionListener(this);
             pane.add(actButton,0);
             pane.repaint();
         }
 
-        public void addAnimateButton(int x, int y, int w, int h){
-            animateButton = new JButton("Start");
+        public void addAnimateButton(int x, int y, int w, int h, String name) {
+            animateButton = new JButton(name);
             animateButton.setBounds(x, y, w, h);
             animateButton.addActionListener(this);
             pane.add(animateButton,0);
             pane.repaint();
         }
 
-        public void animate(){
+        public void animate() {
             if (!isAnimating){
                 isAnimating = true;
                 t.schedule(new MyTimerTask(), 0, 1000/fps);
