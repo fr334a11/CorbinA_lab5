@@ -22,7 +22,7 @@ public class Sprite extends Oval {
 		this.mass = mass;
 		this.widthHeight = Math.sqrt(mass);
 		this.spriteType = spriteType;
-		errorAccelerationPatch();
+		errorAccelerationPatch();//starts acceleration
 	}
 	/**
 	 * the overloaded function of random that will give a range between 5 and 25
@@ -78,7 +78,6 @@ public class Sprite extends Oval {
 			this.changeSize(roundInt(a*this.widthHeight),roundInt(this.widthHeight/a));
 		}
 	}
-    
     
 	/**
 	 * patch to make sure that a ball won't get stuck.

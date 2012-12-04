@@ -18,8 +18,8 @@ public class SpriteWorld extends ButtonWindow
         //placing sprites
         Random rand = new Random();//used to random placement of each
         for (int i=0;i<leSprites.length;i++) {
-            
-            leSprites[i] = new Sprite(rand.nextInt(world_x-20),rand.nextInt(world_y-20),rand.nextInt(700)+300, SpriteType.GRAVITY);
+            if (rand.nextInt(2)==0) { leSprites[i] = new Sprite(rand.nextInt(world_x-20),rand.nextInt(world_y-20),rand.nextInt(700)+300, SpriteType.GRAVITY); }
+            else {leSprites[i] = new Sprite(rand.nextInt(world_x-20),rand.nextInt(world_y-20),rand.nextInt(700)+300, SpriteType.STRAIGHT); }
             spriteContainer.add(leSprites[i],0);
         }
         //creating buttons
