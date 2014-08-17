@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=Coordinate()
-comment1.params=a\ b
-comment1.target=Coordinate(int,\ int)
-numComments=2
